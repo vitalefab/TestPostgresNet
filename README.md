@@ -1,0 +1,24 @@
+postgres version 17.4
+
+CREATE DATABASE testdb;
+
+\c TestDb;
+
+CREATE TABLE Persons (
+    Id SERIAL PRIMARY KEY,
+    Name VARCHAR(100) NOT NULL
+);
+
+CREATE TABLE Addresses (
+    Id SERIAL PRIMARY KEY,
+    Street VARCHAR(200) NOT NULL,
+    City VARCHAR(100) NOT NULL,
+    PersonId INT NOT NULL,
+    CONSTRAINT fk_person FOREIGN KEY (PersonId) REFERENCES Persons(Id) ON DELETE CASCADE
+);
+
+
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+
+dotnet ef dbcontext scaffold "Host=localhost;Database=testdb;Username=postgres;Password=postgres" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -c AppDbContext --force
