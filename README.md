@@ -1,4 +1,12 @@
+
 postgres version 17.4
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+aggiunta migration se mancano tabelle vengono create  in automatico
+
+usata questa per creare model e dbcontext da database già pronto
+---
+dotnet ef dbcontext scaffold "Host=localhost;Database=testdb;Username=postgres;Password=postgres" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -c AppDbContext --force
 
 CREATE DATABASE testdb;
 
@@ -18,7 +26,4 @@ CREATE TABLE Addresses (
 );
 
 
-https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
-
-dotnet ef dbcontext scaffold "Host=localhost;Database=testdb;Username=postgres;Password=postgres" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -c AppDbContext --force

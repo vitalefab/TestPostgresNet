@@ -32,6 +32,21 @@ namespace WebApiTestPostgres
 
             var app = builder.Build();
 
+            try
+            {
+                // Esegue la migrazione automatica all'avvio
+                using (var scope = app.Services.CreateScope())
+                {
+                    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+                    dbContext.Database.Migrate();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
