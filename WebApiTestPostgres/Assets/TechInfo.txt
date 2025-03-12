@@ -1,0 +1,7 @@
+postgres
+
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
+
+dotnet ef dbcontext scaffold "Host=localhost;Database=testdb;Username=postgres;Password=postgres" Npgsql.EntityFrameworkCore.PostgreSQL -o Models -c AppDbContext --force
+

@@ -1,0 +1,6 @@
+@WebApiTestPostgres_HostAddress = http://localhost:5063
+
+GET {{WebApiTestPostgres_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
