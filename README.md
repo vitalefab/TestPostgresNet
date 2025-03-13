@@ -4,6 +4,7 @@ https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 aggiunta migration se mancano tabelle vengono create  in automatico
 con comando
+
 dotnet ef migrations add InitialCreate
 
 
