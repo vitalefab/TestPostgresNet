@@ -3,6 +3,9 @@ postgres version 17.4
 https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
 
 aggiunta migration se mancano tabelle vengono create  in automatico
+con comando
+dotnet ef migrations add InitialCreate
+
 
 usata questa per creare model e dbcontext da database già pronto
 ---
